@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>确认缴费</title>
+	<link href="css/QrcodeOrder.css" type="text/css" rel="stylesheet"/>
+	<link href="css/successForCar.css" type="text/css" rel="stylesheet"/>
+	<script src="./common/js/jquery-3.1.1.min.js"></script>
+	<!-- <script src="./dynamic/debug.min.js"></script> -->
+	<script type="text/javascript">
+	var JspsnURL = "";
+    getJspsnURL();
+    var ua = window.navigator.userAgent.toLowerCase();
+	if ( !GetRequest().USER_ID && !GetRequest().clientId && GetRequest().key && ua.match(/MicroMessenger/i) == 'micromessenger'){
+        //window.location.href = getBasePath() + "/oauth2?appType=WX_JTC&url="+window.location.href;
+        window.sessionStorage.removeItem("key");
+		window.sessionStorage.setItem("key",GetRequest().key);
+        window.location.href = JspsnURL + "userValid.servlet?appType=WX_JTC&url="+window.location.href.split("?")[0];
+	}
+    function getJspsnURL(){
+        $.ajax({
+            url: getBasePath() + "/getCloudURL.servlet",
+            type: "POST",
+            dataType: "text",
+            data:{url_key:"cloud.address.url"},
+            async:false,
+            success: function (jspsnURL) {
+                console.log(jspsnURL);
+                JspsnURL = jspsnURL;
+            }
+        });
+    }
+	/**
+	 * REM布局定位顶部字体
+	 * @return {[type]} [description]
+	 */
+	setFontSize();
+	function getFontSize(){
+	    // 设计稿 750px
+		var width = document.documentElement.clientWidth;
+		var fontSize = (width / 750) * 100;
+	    document.getElementsByTagName("html")[0].style.fontSize = fontSize + "px";
+	}
+	function setFontSize(){
+	    window.addEventListener("resize",getFontSize());
+	}
+    //js获取basepath
+    function getBasePath(){
+        var obj = window.location;
+        var contextPath = obj.pathname.split("/")[1];
+        var basePath = obj.protocol+"//"+obj.host+"/"+contextPath;
+        return basePath;
+    }
+
+    /******  获取URL参数集  *************/
+    function GetRequest() {
+        var str = location.search.length > 0 ? location.search.substring(1) : "";
+        var items = str.length ? str.split("&") : [];
+        var args = {},
+            item = null,
+            name = null,
+            value = null;
+        for (var i = 0, len = items.length; i < len; i++) {
+            item = items[i].split("=");
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            if (name.length) {
+                args[name] = value;
+            }
+        }
+        return args;
+    }
+	</script>
+</head>
+<body class="browser_WX">
+<!-- <div class="head">
+     <div class="head_titel">确认缴费</div>
+     <div class="interal_rule hide">抵扣规则</div>
+</div> -->
+<div id="pop">
+	<div class="animate">
+		<img src="./image/sx.gif" />
+	</div>
+	<p>订单生成中...</p>
+</div>
+<div id="maskOfProgressImage" class="mask-new" style="display:none"></div>
+<div id="poptip" style="display: none;"></div>
+<!--支付确认-->
+<div class="zhegai hide"></div>
+<section id="paypage">
+	<div class="interal_rule hide">抵扣规则</div>
+	<article class="pay_details">
+		<section class="pay_normal" style="">
+			<title>停车费</title>
+			<div class="pay_details_num" id="parkFeeMsg">0.00</div>
+			<p class="num"></p>
+			<div id="timeCount">
+			    <label id="pip">缴费时间剩余：</label>
+				<label id="timeOut"><span id="mm">3</span>分<span id="ss">0</span>秒</label>
+			</div>
+		</section>
+		<section class="pay_nofee" style="display:none">
+			<title></title>
+			<div class="pay_details_message" id="nopayTitle"></div>
+			<p id="nopayMsg"></p>
+			<p>您当前的费用已</p><span>全额优惠</span>
+		</section>
+		<section class="pay_noenter" style="display:none">
+			<title>停车费</title>
+			<div class="pay_details_message" id="noinTitle">此卡未入场</div>
+			<p>请向场内工作人员寻求帮助</p>
+		</section>
+		<section id="parkNameMsg"></section>
+		<section class="fee_details">
+			<!-- <dl>
+				<dt id="parkNameMsg"></dt>
+				<dd id="parkNameTitle">停车场</dd>
+			</dl> -->
+			<dl>
+				<dt id="cardNoTitle">停车卡号</dt>
+				<dd id="cardNoMsg"></dd>
+			</dl>			
+			<dl>
+				<dt id="carNoTitle">车牌号码</dt>
+				<dd id="carNoMsg">-</dd>
+			</dl>
+			<dl id="discountFeeList" style="display:none;">
+				<dt id="discountFeeTitle">优惠金额</dt>
+				<dd id="discountFee"></dd>
+			</dl>
+			<dl>
+				<dt id="serviceTimeTitle">已停时长</dt>
+				<dd id="serviceTime"></dd>
+			</dl>
+			<dl>
+				<dt id="startTimeParkTitle">入场时间</dt>
+				<dd id="startTimePark"></dd>
+			</dl>
+			
+			<div class="clear"></div>
+		</section>
+		<div class="clr"></div>
+	</article>
+	<article id="payCouponList" style="float: left; width: 100%;">
+		<div class="pay_coupon">
+			<h4>优惠券</h4>
+			<span id=""></span>
+		</div>
+	</article>
+	
+	<article id="integralDeduction" class="hide" style="float: left; width: 100%;">
+		<div class="pay_integral">
+			<h4>不使用积分抵扣</h4>
+			<!-- <span class="span">总积分<span id="totolIntegralCount"> 2500</span></span> -->
+			<div class="set_on set_off"></div>
+		</div>
+		
+		<div class="integral_deduction hide">
+		</div>
+		
+		<div class="integral_input">
+		    <div class="input_lable hide">
+		   		<label class="stk_label" >积分：</label>
+				<input class="integral_input3" type="text" placeholder="请输入抵扣积分" readonly = "readonly"/>
+			</div>
+			<div class="input_lable hide">
+				<label class="stk_label">会员号：</label>
+				<input class="integral_input1" type="text" placeholder="请输入会员号" />
+			</div>
+			<div class="integral_input2_parent">
+				<input class="integral_input2 hide" type="text" placeholder="请输入验证码" />
+				<div class="count_down hide"><span>120</span></div>
+			</div> 
+		</div>
+		
+	</article>
+	<article id="cardVolume" class="hide" style="float: left; width: 100%;">
+		<div style="position: relative">
+			<input class="integral_input4" type="text"  maxlength="50" placeholder="请输入卡卷号或扫描你卡卷上的条码" />
+			<div class="saoma"></div>
+		</div>
+	</article>
+	<article id="smallTicket" class="hide" style="float: left; width: 100%;">
+		<div style="position: relative">
+			<input class="integral_input5" type="text" placeholder="请输入小票号或扫描你小票上的条码" />
+			<div class="saoma"></div>
+		</div>
+	</article>
+	
+	<div class="our_rules hide">
+	    <div class="integral_rule">
+	    </div>
+		<ul>
+		   	
+		</ul>
+	</div>
+	<div class="our_rules_other hide">
+	    <div class="integral_rule">
+	    </div>
+	    <ul>  		
+		</ul>
+	</div>
+	<article id="scanpage">
+		<button id="btn_payPark" class="btn_pay" onClick="payParkingCharge();">立即缴费</button>
+		<button id="btn_know" class="btn_gray" style="display:none;" onclick="closePage();">我知道了</button>
+		
+		<!-- <p>缴费成功后即可离场</p> -->
+		<p>缴费后请在<em class="surplusminute"></em>内离场，超时将重新计费。</p>
+		
+		<button id="btn_foucuswx" class="btn_gray" style="display:none;">关注捷停车公众号</button>
+	</article>
+	<article id="selectcoupon" class="pay_couponbox" style="display:none;">
+		<ul>
+			<li style="position:relative;">
+				<label style="width:45%">
+					<title  style="line-height:20px";>不使用优惠券</title>
+				</label>
+				<div class="border_unred_top"></div><div class="border_unred_botton"></div>
+		        <div class="border_left"></div>
+				<div class="radio radio_checked"></div>
+			</li>
+		</ul>
+	</article>
+	<div class="mask-new" style="display:none;"></div>
+	<div class="confirm">
+        <p><span>使用该优惠券后，将全额抵扣停车费</span><br/>您需要在<em class="surplusminute"></em>内离场，超时将重新计费</p >
+        <div class="clear"></div>
+        <div id="confirm_cancel">再想想看</div>
+        <div id="confirm_sure">立即使用</div>
+    </div>
+    <section id="payok" style="width: 94%;margin-left: 3%;float: left;display:none;">
+	<!-- <article class="pay_details">
+		<div class="pay_details_message">您已缴费</div>
+		<p>
+			您的<span>免费离场</span>时间剩余
+			<span class="surplusminute2"></span>
+		</p >
+		<p class="quickexit"></p>
+	</article> -->
+	<li class="coupon_park" style="padding-bottom: 0.1rem;">
+		<div class="background_up_img"></div>
+		<div class="coupon_name">停车优惠券</div>
+		<div class="coupon_num">CP201704280000000013</div>
+		<div class="coupon_valitime">有效期至
+			<span>2018-04-20 23:59:59</span>
+		</div>
+		<div class="background_down_img"></div>
+		<div class="share"><span>5小时</span></div>
+		<span class="coupon_many">1元</span>
+	</li>
+
+	<!-- <article class="pay_coupon2" style="display:none;">
+		<h4 id="pay_coupon_parkname"></h4>
+		<p>
+			<em>停车减免</em>
+			<span id="pay_coupon_amount">0.00</span>
+		</p >
+		<p>有效期<span id="pay_coupon_starttime"></span>至<span id="pay_coupon_endtime"></span></p >
+	</article> -->
+
+</section>
+    <!--关注信息-->
+	<div align="center" class="attention" >
+		<div id="qr">
+			<img src="" alt="商户公众号二维码" width="130px" height="130px" class="attentionPhoto" style="opacity: 0.55;">
+		</div>
+		<div align="center" id="a"><a href="" target="_blank" class="attentionUrl" ><div align="center" class="attentionRemark">长按指纹，识别二维码，不信？您试试~!</div></a></div>
+	</div>
+</section>
+
+<!--缴费异常-->
+<section id="payError">
+	<article>
+		<h4>请前往收费处缴费出场</h4>
+		<p>抱歉，订单获取超时</p>
+		<dl>
+		<dt id="payErrorCarNo">车牌号码</dt>
+			<dd id="payErrorCarNoMsg">-</dd>
+		</dl>
+		<dl id="payErrorMsg" style="top: 4rem;border-top: 1px solid #d9d9d9;">
+			<dt id="payErrorName">错误码</dt>
+			<dd id="payErrorCode">10001</dd>
+		</dl>
+	</article>
+</section>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script> 
+<script src="./qrcodeOrder.js"></script>
+</body>
+</html>

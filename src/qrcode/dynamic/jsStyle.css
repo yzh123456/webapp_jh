@@ -1,0 +1,335 @@
+
+#js{
+z-index: 99;
+}
+#poptip {
+      position: fixed;
+      top: 80%;
+      left: 20%;
+      right: 20%;
+      width: 50%;
+      font-size: 14px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 5%;
+      color: #fff;
+      border-radius: 4px;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+      z-index: 110;
+}
+ul#pop_list{
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 45px;
+    margin: 0 0 10px -10px;
+    background-color: rgba(255, 255, 255, 0.80);
+    box-shadow: 0 -3px 1px rgba(236, 236, 236, 0.53),0 5px 5px rgba(236, 236, 236, 0.53);
+    display: none;
+}
+ul#pop_list li{
+    float: left;
+    margin:0px 1.5% -3% 1%;
+    display: inline-block;
+    width: 20%;
+    position: relative;
+    height: 55%;
+    left: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+.js_nav{
+	position: absolute;
+    height: 30%;
+    width: 70%;
+    z-index: 99;
+    top: 50px;
+}
+#pop_up{
+    position: absolute;
+    top: 45px;
+    width: 10%;
+	height: 60%;
+	background:url(./images/js_img/pop_up.png) no-repeat;
+	background-size:30% 100%;
+    background-position: top center;
+}
+#pop_down{
+    width: 10%;
+    height: 60%;
+    background: url(./images/js_img/pop_down.png) no-repeat;
+    background-size: 30% 100%;
+    margin-right: 5px;
+    right: 0;
+    background-position: top right;
+    top: 45px;
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
+
+#js_footer{
+    position: absolute;
+    z-index: 99;
+    background: url(./images/js_img/searchcar.png) no-repeat center rgba(249, 247, 248, 0.75);
+    background-position-y:-1px;
+    background-size: 10%;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    text-align: center;
+    border: 1px solid #DDD;
+}
+#footer_txt{
+    margin-top: 32px;
+    color: #000;
+    font-size: 1.2em;
+}
+
+#page_info{
+    position: absolute;
+    width: 90%;
+    background-color: #FAFAFA;
+    z-index: 1000;
+    margin-left: 5%;
+    margin-top: 25%;
+}
+#page_info input {
+    width: 90%;
+    height: 30px;
+    margin-left: 8%;
+    margin-bottom: 5px;
+}
+#btn_searchCar{
+    height: 40px;
+    width: 90%;
+    margin: 20px 5%;
+    border: 0;
+    background-color: #3CACFF;
+    font-size: 1.2em;
+    color: #FFF;
+    font-weight: bold;  
+}
+.icon_car, .icon_add, .icon_park {
+    background: url() no-repeat transparent 20px center / 20px;
+    padding-left: 50px;
+}
+.icon_add {
+    background-image: url(./images/js_img/icon_addr.png);
+}
+.icon_car{
+    background-image:url(./images/js_img/icon_car.png);
+}
+
+.icon_add{
+    background-image:url(./images/js_img/icon_addr.png);
+}
+
+.icon_park{
+    background-image:url(./images/js_img/icon_park.png);
+}
+#input_clr{
+    position: absolute; 
+    width: 20px;
+    height: 20px;
+    background: url(./images/js_img/icon_dele.png) no-repeat #999 center / 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    float: right;
+    white-space: nowrap;
+}
+.icon_edit{
+    width: 20px;
+    height: 40px;
+    float: right;
+    background:url(./images/js_img/icon_edit.png) no-repeat transparent center / 20px;
+}
+#page_info title,#page_info p{
+    min-height: 40px;
+    line-height: 40px;
+    padding: 0 8%;
+    display: block;
+}
+table {
+    min-height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    display: block;
+}
+p.textbox {
+    border: 1px solid #E4E4E4;
+    background-color: rgb(255, 255, 255);
+    width: 94%;
+    margin-left: 3%;
+    height: 40px;
+}
+#near_park{
+    border: 0px;
+    background-color: rgb(250, 250, 250);
+}
+#selectCar {
+    width: 100%;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    z-index: 10;
+    background-color: #FFF;
+    color: #888;
+    text-align: center;
+    display: none;
+}
+#recordBox td, #carNoBox td, #historyBox td {
+    width: 12.5%;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin: 4px 0;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+    font-size: 15px;
+}
+#recordBox td{width: 25%;}
+#carNoBox tbody, #carNoBox tr, #recordBox tbody, #recordBox tr, #historyBox tbody, #historyBox tr {
+    width: 100%;
+    float: left;
+}
+#carNoBox, #historyBox {
+    font-size: 0.9em;
+    float: left;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    opacity: 0.5;
+}
+
+#payParking {
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    color: #332A2A;
+    float: left;
+    overflow: hidden;
+    padding: 2px 15px 0 0;
+    margin-left: 8%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.dialog {
+    width: 280px;
+    margin-left: calc(( 100% - 282px)/2);
+    margin-left: -webkit-calc(( 100% - 282px)/2);
+    top: 20%;
+    min-height: 40px;
+    font-size: 18px;
+    background: #f5f5f5;
+    border: #afafaf solid 1px;
+    z-index: 10000;
+    position: fixed;
+    padding-bottom: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    height: 240px;
+}
+.h3-head {
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: #3CACFF;
+    color: #fff;
+    line-height: 2em;
+    text-align: center;
+    padding-bottom: 10px;
+    height: 2em;
+}
+.carSeekSelect {
+    width: 100%;
+    float: left;
+    padding: 0;
+    display: block;
+}
+.carSeekSelect .list {
+    padding: 0px 5px;
+    position: relative;
+    clear: both;
+}
+.carList{
+line-height: 35px;
+}
+.carSeekSelect .list .icon {
+    width: 40px;
+    height: 40px;
+    background: url(./images/js_img/icon_car.png) no-repeat #afafaf center;
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+#carList p.textbox{
+    min-height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    display: block;
+    border: 1px solid #E4E4E4;
+}
+
+#sFloor_btn,#tFloor_btn{
+    float: left;
+    margin: 6px 1px 6px 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+}
+#tFloor_btn{
+    float: left;
+    margin: 6px 1px;
+}
+#arrow,#arrow1{
+    float: left;
+    background: url(./images/js_img/arrow.png) no-repeat;
+    background-size: 100%;
+    height: 50px;
+    width: 22%;
+    margin-top: 23px;
+    margin-left: -21%;
+}
+#arrow1{
+    margin-left: 0;
+}
+#end_btn{
+    background: url(./images/js_img/navigation_hint_end.png) no-repeat;
+    background-size: 40px;
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin: 6px 1px;
+}
+.jps_box span{
+    float: left;
+    font-size: 0.8em;
+    margin-top: -5px;
+    margin-left: -2%;
+    width: 23%;
+}

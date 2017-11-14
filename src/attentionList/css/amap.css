@@ -1,0 +1,721 @@
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,blockquote,pre,form,fieldset,table,th,td,span,p,input,button {
+margin:0;
+padding:0;
+}
+
+
+body {
+	width:100%;
+	height:100%;
+	background-color:#F0EFF5;
+	color:#545454;
+	margin:0;
+	-webkit-text-size-adjust: 100%!important;
+	cursor: pointer;
+}
+
+
+li {
+list-style-type:none;
+}
+
+
+em {
+font-style:normal;
+}
+
+input,button {
+border:0;
+outline:none;
+}
+
+a {
+color:#222222;
+text-decoration:none;
+}
+.error{
+	font-size:0.32rem;
+	text-align:center;
+
+	
+}
+
+section#homepage,section#searchpage,section#orderpay,section#parkingdetails,section#searchList,section#focusonlist,section#showParkDetailImage,section#parkOrder{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	background: #FFF;
+}
+section#parkOrder{
+	background-color: #F0EFF5;
+	
+} 
+section#parkOrder .parkFee{
+	border-bottom: 1px solid #d9d9d9;
+	text-align: center;
+	padding-top:0.22rem;
+	padding-bottom:0.17rem;
+}
+.licenseNumber{
+	padding:0.3rem;
+	background-color: #fff;
+
+}
+.payMent{
+	padding:0 0.3rem;
+	margin-bottom: 0.3rem;
+}
+.error{
+	padding:0 0.3rem;
+	font-size: 0.26rem;
+	color: #959595;
+}
+.error b{
+	color: #80c02b;
+
+}
+.error span{
+	color: #ef6623;
+}
+.payMent p{
+	width: 100%;
+	height: 0.9rem;
+	background-color: #9adb43;
+	color:#fff;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.32rem;
+	border-radius: 10px;
+}
+.applyTip{
+	background-color: #fff;
+	border: 1px solid #d9d9d9;
+	margin-bottom: 0.3rem;
+}
+.licenseNumber p,.applyTip p{
+	font-size: 0.32rem;
+	color:#222222;
+}
+.applyTip p{
+	
+	height:0.9rem;
+	line-height: 0.9rem;
+	padding-left:0.3rem;
+	padding-right:0.3rem;
+	
+}
+.applyTip p:nth-child(1){
+	border-bottom: 1px solid #d9d9d9;
+}
+
+/*.applyTip p:nth-child(2) span:nth-child(3){
+	background: url(../../src/bookingList/images/icon_radio_none.png);
+	width: 0.48rem;
+	height: 0.48rem;
+	margin-top:0.2rem;
+	float: right;
+}
+.applyTip p:nth-child(1) span:nth-child(1){
+	width: 0.43rem;
+	height:0.41rem;
+	margin-right:0.26rem;
+	background: url(../../src/bookingList/images/icon_03.png);
+	display: inline-block;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.applyTip p:nth-child(2) span:nth-child(1){
+	width: 0.43rem;
+	height:0.41rem;
+	margin-right:0.26rem;
+	background: url(../../src/bookingList/images/icon_10.png);
+	display: inline-block;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.applyTip p:nth-child(1) span:nth-child(3){
+	color: #959595;
+	font-size: 0.26rem;
+}*/
+.applyTip p:nth-child(1) span:nth-child(3) b{
+	color: #ef6623;
+}
+/*.applyTip p:nth-child(1) span:nth-child(4){
+	background: url(../../bookingList/images/icon_radio_checked.png);
+	width: 0.48rem;
+	height: 0.48rem;
+	-webkit-background-size: cover;
+	background-size: cover;
+	float: right;
+	margin-top:0.2rem;
+}*/
+.licenseNumber p:nth-child(1){
+	margin-bottom:13px;
+}
+.licenseNumber p:nth-child(1) span,.licenseNumber p:nth-child(2) span{
+	color:#959595;
+	float: right;
+	font-size: 0.32rem;
+}
+.park_fee p {
+	line-height:28px;
+}
+.parkFee p:nth-child(1){
+	color:#959595;
+	font-size:0.32rem;
+}
+.parkFee p:nth-child(2){
+	color:#ef6623;
+	font-size:0.6rem;
+	font-weight: 600;
+}
+.parkFee p:nth-child(3){
+	font-size: 0.26rem;
+	color:#959595;
+	
+}
+.parkFee p:nth-child(2) .park_fee_tip{
+	font-size: 14px;
+	
+}
+.parkFee p:nth-child(3) .excessTime{
+	color:#ef6623;
+}
+
+section#parkOrder .parkTip{
+	height:0.8rem;
+	line-height: 0.8rem;
+	background-color: #ebf7ff;
+	color:#80c02b;
+	padding-left:0.3rem;
+	font-size:16px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+section#bookinglist,section#attentionList{
+	width: 100%;
+    height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	background: #f0eff5;
+}
+section#bookingcontent{
+	position: absolute;
+	top:2.5rem;
+	left:0;
+	z-index: 1;
+	
+}
+
+section#homepage{
+	z-index:10;
+}
+
+
+.fp_list{
+	padding:0 0.3rem;
+	
+}
+.line{
+	width: 1px;
+	height: 100%;
+	background-color: #80c02b;
+	position: absolute;
+    left: 0.6rem;
+    top: 0.9rem;
+}
+
+.fp_list #tp_park_list,#attentionList .to_park_ditail {
+	border:1px solid #d9d9d9;
+	background-color:#FFF;
+	padding:0.37rem 0.19rem 0 0.33rem;
+	text-align: left;
+	position: relative;
+	line-height: 0.42rem;
+	margin-bottom: 0.3rem;
+	overflow: hidden;
+}
+.hide{
+	display: none;
+}
+#attentionList .to_park_ditail{
+	padding:0.2rem 0.4rem 0.24rem 0.3rem;
+}
+.tp_park_details{
+	padding-bottom: 0.14rem;
+}
+#attentionList .to_park_ditail{
+	margin:0.3rem 0 0 ;
+	position: relative;
+}
+.fp_list li .vehicle_no,#attentionList li .parkTitle{
+	font-size: 0.32rem;
+	color: #222;
+	overflow: hidden;
+	width: 3.6rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.fp_list li .parkAddress,#attentionList li .parkAddress{
+	font-size: 0.26rem;
+	color:#959595;
+	
+}
+#attentionList .parkTime .parkDat{
+	width: 0.15rem;
+	height: 0.15rem;
+	background-color: #80c02b;
+	border-radius: 100%;
+	display: inline-block;
+	margin-right: 0.1rem;
+    margin-bottom: 0.02rem;
+}
+#attentionList .parkNumber{
+
+	font-size:0.32rem;
+	display:inline-block;
+	width: 1.7rem;
+}
+#attentionList .parkNumber .number{
+	color: #959595;
+}
+#attentionList .parkprice{
+	color:#ef6623;
+	font-size:0.32rem;
+	display:inline-block;
+
+}
+.parkTime{
+	position: relative;
+}
+#attentionList .go_Map{
+	font-size: 0.32rem;
+	color:#80c02b;
+	position: absolute;
+	right: 0.4rem;
+	bottom: 0.05rem;
+}
+#attentionList .parkprice .hours{
+	font-size: 0.14rem;
+    color: #afafaf;
+}
+
+#attentionList li .datail{
+	width: 82%;
+	float:left;
+	border-right:1px solid #d9d9d9;
+}
+
+.Function {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	
+}
+.Function li span{
+	width: 0.3rem;
+	height: 0.32rem;
+	display: block;
+	margin-right: 0.1rem;
+
+}
+.Function li a{
+	font-size:0.32rem;
+}
+.border{
+	width:100%;
+	height: 1px;
+	position: absolute;
+	background-color: #d9d9d9;
+	left:0;
+}
+/*.Function li:nth-child(1) span{
+	background: url(../../src/bookingList/images/daly-history1.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+}*/
+
+.Function li:nth-child(3) span,#attentionList .icon{
+	background: url(../images/booking.png);
+	-webkit-background-size: cover;
+	background-size: cover;	
+}
+#attentionList .icon{
+	display:inline-block;
+	width: 0.28rem;
+	height: 0.3rem;
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin-right: 0.1rem;
+	margin-bottom: -0.07rem;
+
+}
+#attentionList .find_icon{
+	background: url(../images/sc.png);
+	position: absolute;
+	width: 0.78rem;
+	height: 0.78rem;
+	-webkit-background-size: cover;
+	background-size: cover;
+	right:0.3rem;
+	top: 0.35rem;
+	
+}
+#attentionList .new_icon{
+	background: url(../images/find.png);
+	position: absolute;
+	width: 0.78rem;
+	height:  0.78rem;
+	-webkit-background-size: cover;
+	background-size: cover;
+	right:0.3rem;
+	top: 0.35rem;
+}
+.Function  li {
+	flex:1;
+	display: flex;
+	justify-content: center;
+	font-size: 1.1rem;
+    font-weight: 600;
+    border-right:1px solid #c6c6c6;
+}
+.Function  li:nth-child(1) {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.Function  li:nth-child(3) {
+	display: flex;
+	align-items: center;
+	border-right:none;
+}
+.focusonlist_li_name{
+	height: 20px;
+	overflow: hidden;
+	float: left;
+	width: 80%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dixixan{ border-bottom:#c6c6c6 solid 1px;}
+
+#searchList .search_list_addr{
+	width: 220px;
+    display: block;
+    float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#searchList .search_list_price{
+	float:right;
+}
+.clear{
+	clear: both;
+}
+.fp_list li #parkName {
+	color:#959595;
+	font-size:0.26rem;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.fp_list li #parkName span{
+	display: inline-block;
+	margin-left:0.3rem;
+}
+.fp_list li .fp_list_title{
+	max-width: 90%;
+	overflow: hidden;
+	float:left;
+}
+.fp_list li .icon_delay{
+	width:18px;
+	height:18px;
+	background:url(../image/icon_order_delay.png) no-repeat center right / 18px;
+	float:left;
+	margin-left:5px;
+}
+.coupon{
+	
+	position: absolute;
+	right:0.37rem;
+	top: 0.37rem;
+	color:#ef6623;
+	font-size: 16px;
+    font-weight: 600;
+}
+.noused{
+	background: url(../../src/bookingList/images/no-used1.png);
+	width: 0.22rem;
+	height: 0.9rem;
+	position: absolute;
+	left:-0.06rem;
+	top:0.34rem;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.isOverTime{
+	width:30%;
+	height:72px;
+	float:left;
+}
+.isOverTime.overtime{
+	background: url(../image/icon_order_overdue.png) no-repeat center / auto 100%;
+}
+.fp_list .bookTime{
+	color:#959595;
+	font-size: 0.22rem;
+}
+.fp_list .bookTime #overdueTime,#overduebeginTime{
+	color: #ef6623;
+
+}
+#overduebeginTime {
+	margin-right: 0.1rem;
+}
+.fp_list .bookTime:before{
+	content:"预订时间：";
+	float:left;
+	color:#959595;
+	font-size:0.22rem;
+}
+.entrance{
+	
+	color:#afafaf;
+}
+.bookTime{
+	width: 100%;
+}
+.fp_list .bookDate{
+	margin-right:7px;
+}
+.fp_list .focusonlist_content{
+	display: block;
+	width: 100%;
+	height: 40px;
+}
+.fp_list .focusonlist_li_more{
+	float:left;
+	width:100%;
+	height:20px;
+}
+.searchParkMark{
+	width: 100%;
+	height: 40px;
+	float: left;
+	display: block;
+}
+.top-border{
+	border-top: #c6c6c6 solid 1px;
+}
+.fp_num_0:before {
+float:left;
+width:14px;
+height:14px;
+border-radius:7px;
+content:"";
+margin:3px 5px 0 0;
+}
+.parkList .green:before{
+background-color:#15C42F;
+}
+.parkList .orange:before{
+background-color:#FE7B11;
+}
+.parkList .red:before{
+background-color:#FB1F1F;
+}
+.parkList .gray:before{
+background-color:#696969;
+}
+
+.fp_num_1 {
+color:#FF3F3F;
+}
+
+.fp_num_1:before {
+background-color:#FF3F3F;
+}
+
+.fp_num_3 {
+color:#15C42F;
+}
+
+.fp_num_3:before {
+background-color:#15C42F;
+}
+
+.goto {
+float:right;
+margin-top:-26px;
+padding-left:30px;
+width:auto;
+background:transparent url(../image/icon_goto-38.png) no-repeat scroll 0 0 / 30% 100%;
+color:#00AFD1;
+font-weight:400;
+font-size:13px;
+}
+.detail{
+	width:50px;
+	color:#00AFD1;
+	text-align:right;
+	height: 25px;
+	line-height: 25px;
+	float:right;
+}
+.fp_sort {
+margin-bottom:0.3rem;
+height:0.9rem;
+line-height:0.87rem;
+border-bottom:1px solid #d9d9d9;
+background-color:#FFF;
+}
+
+
+.fp_sort li {
+float:left;
+width:2rem;
+border-bottom:2px solid #FFF;
+text-align:center;
+font-size:0.3em;
+}
+.fp_sort li:nth-child(1){
+	margin-left:0.87rem;
+}
+.fp_sort li:nth-child(2){
+	margin-left:2.26rem;
+}
+.fp_sort li.selected {
+border-bottom:2px solid #80c02b;
+color:#80c02b;
+}
+.pulldown,.pullUp{
+
+	text-align: center;
+	font-size:0.22rem;
+	color:#959595;
+	text-align: center;
+}
+
+ .cover{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	background: #000;
+	opacity: 0.7;
+
+}
+ .message{
+	background-color: #fff;
+	position: fixed;
+	top: 50%;
+	width: 81%;
+	border-radius: 10px;
+	margin-left: 0.7rem;
+	margin-right: 0.7rem;
+	margin-top: -2.6rem;
+	 z-index: 99999;
+
+}
+.message p{
+
+	background: url(../images/bg.png);
+	width:6.075rem;
+	height:2.36rem;
+	-webkit-background-size:cover;
+	background-size:cover;
+
+}
+ .message div{
+	border-top:1px solid #80c02b;
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+}
+
+ .message div span{
+	display: inline-block;
+	font-size: 0.34rem;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	padding:0.3rem 0;
+	cursor: pointer;
+
+
+}
+ .message div span:nth-child(1){
+	color: #222;
+	border-right:1px solid #80c02b;
+
+}
+ .message div span:nth-child(2){
+	color: #80c02b;
+
+}
+
+.hasNo{
+
+	background-size: 100%;
+	width: 28%;
+	height: 2.20rem;
+	margin-left: 36%;
+	top: 33%;
+
+}
+h2{
+	font-weight: normal;
+}
+.loading{
+	width:100%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	background: #000;
+	opacity: 0.7;
+	color: #fff;
+	font-size: 0.32rem;
+	text-align: center;
+
+}
+.Nocontent{
+	font-size: 0.22rem;
+	color: #959595;
+	text-align: center;
+}
+.f54{
+	color:#545454;
+}
+.fd7{
+	color:#FD7B12;
+}
+.f00{
+	color:#ff0000;
+}
+.mesy{
+	font-size: 0.28rem;
+	margin-left: 27%;
+	position: absolute;
+	bottom: 17%;
+	color: #ffa518;
+}
+.att{
+	font-size: 0.28rem;
+	margin-left: 37%;
+	position: absolute;
+	bottom: 17%;
+	color: #ffa518;
+}

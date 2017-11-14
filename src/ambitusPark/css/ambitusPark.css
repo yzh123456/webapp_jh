@@ -1,0 +1,409 @@
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,blockquote,pre,form,fieldset,table,th,td,span,p,input,button {
+	margin:0;
+	padding:0;
+	cursor: pointer;
+	font-family:Helvetica;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color: transparent;
+}
+body{
+	background-color: #c6c6c6;
+}
+li{
+	list-style-type:none;
+}
+.search_counp{
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	background: #F0EFF5;
+	z-index: 1111;
+}
+.search_counp #keyword{
+	height: 35px;
+	width: calc(100% - 81px);
+	border:0;
+	font-size: 13px;
+	padding-left: 10px;
+	margin-left: 10px;
+	border-radius: 5px;
+	color: #999999;
+	background-color: #fff;
+}
+
+.search_counp .search_buttom{
+	position: absolute;
+	right: 0;
+	top: 15px;
+	width: 30px;
+	height: 31px;
+	/* border-left: 1px solid #d9d9d9; */
+	line-height: 35px;
+	text-align: center;
+	margin-right: 15px;
+	background-image: url(../images/icon_go_to_map.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.search_counp_div{
+	font-size: 13px;
+	padding-top: 10px;
+}
+#search .search_counp_div{
+	padding-top: 0px;
+}
+#maskOfProgressImage{
+	margin-top: 0.30rem;
+	float: left;
+	background-color: #ffffff;
+	width: 100%;
+
+}
+.main_messege{
+	float: left;width: 70%;
+	padding: 0.20rem 0 0 0.20rem;
+}
+.park_name{
+	font-size: 0.32rem;
+	color: #222222;
+	word-break: break-all;
+}
+.address{
+	padding:0.10rem 0 0.16rem 0;
+	color: #959595;
+	font-size: 0.26rem;
+}
+.park_messege{
+	float: left;
+	width: 100%;
+	color: #959595;
+}
+.price em{
+	font-size: 0.32rem;
+}
+.park_messege .parking_log{
+	font-size: 0.32rem;
+	width: 35%;
+}
+
+.park_messege li{
+	float: left;
+	width: 30%;
+	font-size: 0.26rem;
+}
+.park_messege .price{
+	width: 35%;
+}
+.price em{
+	color: #ef6623;
+}
+.park_messege .distance{
+	width: 24%;
+	height:0.42rem;
+	position: relative;
+	margin-left: 0;
+}
+.park_messege .distance em{
+	position: absolute;bottom: 0;
+}
+.effect{
+	font-size: 0.24rem;
+	float: left;
+}
+.bit{
+	width: 0.14rem;
+	height: 0.14rem;
+	margin-right: 4px;
+	color: #9adb43;
+	background-color: #9adb43;
+	float: left;
+	margin-top: 5px;
+	border-radius: 0.14rem;
+}
+.parking_log .first_em{
+	color: #9adb43;
+}
+.pay_book_park{
+	width: 33%;
+	border-right: 1px solid #d9d9d9;
+}
+.mobile_payment{
+	font-size: 0.8em;
+	border:1px solid #23ca3a;
+	color: #23ca3a;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+}
+.park_precautions{
+	font-size: 0.8em;
+	border:1px solid #55d2cb;
+	color: #55d2cb;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+}
+.park_share{
+	font-size: 0.8em;
+	border:1px solid #f9936f;
+	color: #f9936f;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+}
+.booking_car{
+	font-size: 0.8em;
+	border:1px solid #ef6cd8;
+	color: #ef6cd8;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+}
+.fca_payment{
+	font-size: 0.9em;
+	border:1px solid #fcac8f;
+	color: #fcac8f;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+
+}
+.self_payment{
+	font-size: 0.8em;
+	border:1px solid #f3c24c;
+	color: #f3c24c;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+}
+.find_car{
+	font-size: 0.8em;
+	border:1px solid #f9936f;
+	color: #f9936f;
+	padding: 1px 2px;;
+	float:left;
+	margin-right: 0.10rem;
+	margin-top: 0.20rem;
+	border-radius: 2px;
+}
+
+.parked{
+	float:right;
+	width: 1.40rem;
+	height: 1.40rem;
+	border: 1px solid #9adb43;
+	border-radius: 1.40rem;
+	text-align: center;
+	font-size: 0.24rem;
+	margin: 0.20rem 0.20rem 0 0;
+}
+.park_count{
+	font-size: 0.32rem;
+	color: #ef6623;
+	margin-top: 0.35rem;
+}
+.parked_word{
+	font-size: 0.8em;
+	color: #959595;
+}
+.footer_parent{
+	float: left;
+	width: 100%;
+}
+.functions{
+	float: left;
+	width: calc(100% - 20px);
+	padding: 0 10px 10px 10px;
+}
+.footer_effect img{
+	height: 0.35rem;
+	margin-right: 6px;
+}
+.footer_effect{
+	text-align: center;
+	font-size: 0.32rem;
+	float: left;
+	width: 100%;
+	border-top:1px solid #d9d9d9;
+	border-bottom:1px solid #d9d9d9;
+}
+.footer_effect li{
+	float: left;
+	padding: 0.10rem 0;
+	margin: 0.20rem 0;
+}
+.booking{
+	width: 49%;
+	border-right: 1px solid #d9d9d9;
+	display: inline-block;
+	margin: 10px 0;
+	padding: 5px 0;
+}
+
+.go_to_here{
+	width: 50%;
+	display: inline-block;
+	margin: 10px 0;
+	padding: 5px 0;
+}
+
+
+/*  头部 */
+.titil_div{
+	font-size: 13px;
+	width: 100%;
+}
+.titil_ul{
+	width: 100%;
+}
+.titil_first_li{
+	float: left;
+	background: #fff;
+	padding: 14px 0;
+	margin-top: 16px;
+	border-bottom: 1px solid #d9d9d9;
+	width: 33%;
+	text-align: center;
+}
+.titil_second_li{
+	float: left;
+	background: #fff;
+	padding: 14px 0;
+	margin-top: 16px;
+	border-left: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
+	width: 33%;
+	text-align: center;
+}
+.titil_third_li{
+	float: left;
+	background: #fff;
+	padding: 14px 0;
+	margin-top: 16px;
+	border-left: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
+	width: 33%;
+	text-align: center;
+}
+.titil_ul img{
+	width: 0.28rem;
+	height: 0.14rem;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.around{
+	font-size: 13px;
+	padding-left: 15px;
+	background: #fff;
+	float: left;
+	width: 100%;
+	color: #222222;
+	border-bottom: 1px solid #d9d9d9;
+	border-top: 1px solid #d9d9d9;
+	position: fixed;
+	top:115px;
+	z-index: 1111;
+}
+.around li{
+	padding: 10px 0;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #d9d9d9;
+}
+.around .active{
+	color:#9adb43;
+}
+.around li:last-child{
+	border-bottom:0;
+}
+
+
+.ovorder{
+	width: 100%;
+	height: 0.9rem;
+	background-color: #959595;
+	color:#fff;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.32rem;
+	border-radius: 10px;
+}
+.Unbind，Bind{
+
+	font-weight: 600;
+	text-align: center;
+
+}
+.Unbind p:nth-child(1),.Bind p:nth-child(1){
+	font-size:0.8rem;
+	text-align: center;
+	margin-bottom: 0.4rem;
+	color:#80c02b;
+
+	margin-top:20%;
+}
+.Unbind p:nth-child(2),.Bind p:nth-child(2){
+	font-size:0.32rem;
+	text-align: center;
+	color:#000;
+	margin-bottom: 0.6rem;
+}
+.Unbind p:nth-child(3),.Bind p:nth-child(3){
+
+	font-size: 0.26rem;
+	text-align: center;
+	color: #959595;
+	border-bottom: 1px dashed #80c02b;
+	padding-bottom: 0.5rem;
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+
+
+}
+.Unbind p:nth-child(4){
+	font-size: 0.26rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	color:#000;
+	text-align:center;
+}
+.Bind p:nth-child(4){
+	font-size: 0.26rem;
+	padding-top: 0.7rem;
+	padding-bottom: 0.2rem;
+	color:#000;
+	text-align:center;
+}
+.Bind p:nth-child(5){
+	font-size: 0.25rem;
+	padding-bottom: 0.7rem;
+	color: #000;
+	text-align: center;
+}
+.Unbind p:nth-child(4) span{
+
+	color:#80c02b;
+}
+.Unbind div,.Bind div{
+	margin: 0.3rem 0.2rem;
+	width: 94%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	text-align: center;
+	background-color:#80c02b;
+	font-size: 0.32rem;
+	color: #fff;
+	border-radius: 5px;
+}

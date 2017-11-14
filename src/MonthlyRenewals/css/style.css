@@ -1,0 +1,203 @@
+
+.coverlist{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+    background: #000;
+    opacity: 0.7;
+
+}
+.messagelist{
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    width: 81%;
+    border-radius: 10px;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    margin-top: -2.6rem;
+    z-index: 999999;
+
+}
+.messagelist p:nth-child(1){
+
+    background: url(../images/pic.png);
+    width:6.075rem;
+    height:2.36rem;
+    -webkit-background-size:cover;
+    background-size:cover;
+    position:relative;
+
+
+}
+.messagelist p:nth-child(3){
+    background: url(../images/pic_myvallet_bg.png);
+    width:3.73rem;
+    height:0.64rem;
+    -webkit-background-size:cover;
+    background-size:cover;
+    position:absolute;
+    left:20%;
+    top:42%;
+
+}
+.messagelist p:nth-child(2){
+    font-size: 0.32rem;
+    color: #fff;
+    position: absolute;
+    left: 19%;
+    bottom: 59%;
+    transform: rotate(-5deg);
+
+}
+.messagelist div{
+    border-top:1px solid #80c02b;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.messagelist div span{
+    display: inline-block;
+    font-size: 0.34rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding:0.3rem 0;
+    cursor: pointer;
+
+
+}
+.messagelist div span:nth-child(1){
+    color: #222;
+    border-right:1px solid #80c02b;
+
+}
+.messagelist div span:nth-child(2){
+    color: #80c02b;
+
+}
+.check{
+    width: 0.48rem;
+    height:0.48rem;
+    background:url(../images/icon_radio_checked.png);
+    background-size:cover;
+    position: absolute;
+    right:0.2rem;
+    top:0.16rem;
+
+
+}
+.icon{
+    width: 0.48rem;
+    height:0.48rem;
+    background:url(../images/icon_radio_none.png);
+    background-size:cover;
+    position: absolute;
+    right:0.2rem;
+    top:0.16rem;
+}
+.activeBtn{
+    width: 90%;
+    padding: 10px 0px 8px;
+    font-size: 17px;
+    margin: 50px 0px 0px 5%;
+    text-align: center;
+    border-radius: 0px;
+    background-color:#9ADB43;
+    color: #fff;
+}
+.Btn{
+    width: 90%;
+    padding: 10px 0px 8px;
+    font-size: 17px;
+    margin: 50px 0px 0px 5%;
+    text-align: center;
+    border-radius: 0px;
+    background-color: rgb(195, 195, 195);
+    color: rgb(149, 149, 149);
+}
+.Unbind，Bind{
+
+    font-weight: 600;
+    text-align: center;
+
+}
+.Unbind p:nth-child(1),.Bind p:nth-child(1){
+    font-size:0.8rem;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    color:#80c02b;
+
+    margin-top:20%;
+}
+.Unbind p:nth-child(2),.Bind p:nth-child(2){
+    font-size:0.32rem;
+    text-align: center;
+    color:#000;
+    margin-bottom: 0.6rem;
+}
+.Unbind p:nth-child(3),.Bind p:nth-child(3){
+
+    font-size: 0.26rem;
+    text-align: center;
+    color: #959595;
+    border-bottom: 1px dashed #80c02b;
+    padding-bottom: 0.5rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+
+
+}
+.Unbind p:nth-child(4){
+    font-size: 0.26rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    color:#000;
+    text-align:center;
+}
+.Bind p:nth-child(4){
+    font-size: 0.26rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.2rem;
+    color:#000;
+    text-align:center;
+}
+.Bind p:nth-child(5){
+    font-size: 0.25rem;
+    padding-bottom: 0.7rem;
+    color: #000;
+    text-align: center;
+}
+.Unbind p:nth-child(4) span{
+
+    color:#80c02b;
+}
+.Unbind div,.Bind div{
+    margin: 0.3rem 0.2rem;
+    width: 94%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: center;
+    background-color:#80c02b;
+    font-size: 0.32rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.time{
+    width: 85%;
+    line-height: 42px;
+    margin-left: 15%;
+    font-size: 15px;
+    background-color: rgb(248, 157, 51);
+    color: white;
+    text-align: center;
+}
+.tel,.code{
+    font-size:0.28rem;
+}
+

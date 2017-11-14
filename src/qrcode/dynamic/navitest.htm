@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<title>动态导航</title>
+<link rel="stylesheet" href="./zebra_dialog.css">
+<link rel="stylesheet" href="./test/css/layout.css">
+<link rel="stylesheet" href="./mc_map.css?t=3">
+<link rel="stylesheet" href="./jsStyle.css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="./jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="./common.js"></script>
+<script type="text/javascript" src="./loader.js"></script>
+<script type="text/javascript" src="./test/js/fastclick.js"></script>
+<!-- <script type="text/javascript" src="./test/js/mapnavitest.js"></script> -->
+<script type="text/javascript" src="./test/js/base.js"></script>
+<style type="text/css">
+	.cls_txt_circle {
+	    padding-left: 10px;
+	    background: url(./test/images/ic_textpoint_blue@2x.png) no-repeat 0 50%;
+	    background-size: 8px 8px;
+	}
+</style>
+
+<script type="text/javascript">
+/*var regionId = "14580092656492396";
+f6----regionId=14537712611408427&floorId=14537712631242004&ticket=wx_jieshun_oBt8bt705v9gdG_FFrJPqkR6pgx0&
+F4--  -fId=14537712624520748&uId=14443627440610781     
+f1-----fId=14537712611718428&uId=14443627440610781
+*/
+
+var regionId = "";
+var floorId = "";
+var ticket = "wx_jieshun_";
+var reg = new RegExp("(^|&)regionId=([^&]*)(&|$)");
+var r = window.location.search.substr(1).match(reg);
+if(r != null){
+	regionId = r[2];
+}
+reg = new RegExp("(^|&)floorId=([^&]*)(&|$)");
+r = window.location.search.substr(1).match(reg);
+if(r != null){
+	floorId = r[2];
+}
+reg = new RegExp("(^|&)ticket=([^&]*)(&|$)");
+r = window.location.search.substr(1).match(reg);
+if(r != null){
+	ticket = r[2];
+}
+// alert("regionId=" + regionId);
+</script>
+
+</head>
+<body class=" " onload="load()">
+	<!--捷顺业务交互 -->
+	<div id="js" >
+		<nav id="js_nav" class="js_nav">
+			<div id="pop_up"></div>
+			<div id="pop_down"></div>
+			<ul id="pop_list">
+			</ul>
+		</nav>
+		<div class="mask hide" id="mask"></div>
+		<section id="page_info" class="hide">
+			<article id="ePoint">
+				<title>我的车/车位</title>
+				<p class="textbox icon_car">
+					<input id="input_locatNo" placeholder="请输入您的车牌号/车位号"/>
+					<i id="input_clr" class="hide"></i>
+				</p>
+			</article>
+			<article id="sPoint">
+				<title>我现在的位置：</title>
+				<p id="near_park" class="icon_add textbox">
+					<span id="input_nearbyPark" style="margin-left: 8%;">请选择附近的停车场</span>
+					<!-- <select id="payParking" disabled="disabled">
+					 	 <option value="">请选择附近的停车场</option>
+					</select> -->
+					<!-- <i class="icon_edit"></i> -->
+				</p>
+				<!-- <p id = "near_carNo" class="textbox icon_park">
+					<input id="input_carNo" placeholder="请输入附近的车位号"/>
+				</p> -->
+			</article>
+			<article>
+				<button type="button" id="btn_searchCar">查车</button>
+			</article>
+			<article id="selectCar" class="">
+				<table id="recordBox">
+					<tr></tr>
+				</table>
+				<table id="carNoBox">
+					<tr>
+						<td>粤</td> <td>京</td> <td>沪</td> <td>浙</td>
+						<td>苏</td> <td>鲁</td> <td>晋</td> <td>冀</td>
+					</tr>
+					<tr>
+						<td>豫</td> <td>川</td> <td>渝</td> <td>辽</td>
+						<td>吉</td> <td>黑</td> <td>皖</td> <td>鄂</td>
+					</tr>
+					<tr>
+						<td>湘</td> <td>赣</td> <td>闽</td> <td>陕</td>
+						<td>甘</td> <td>宁</td> <td>蒙</td> <td>津</td>
+					</tr>
+					<tr>
+						<td>贵</td> <td>云</td> <td>桂</td> <td>琼</td>
+						<td>青</td> <td>新</td> <td>藏</td> <td>港</td>
+					</tr>
+					<tr>
+						<td>澳</td>
+					</tr>
+				</table>
+			</article>
+		</section>
+		<div id="poptip" class="hide"></div>
+		<!-- 多楼层同名车位弹框 -->
+		<div class="dialog hide" style="padding-bottom: 0px;" id="myCar">
+			<h3  class="h3-head">我的车停在</h3>
+		   	<div class="carSeekSelect" style="margin: 20px 0;">   
+		      	<div class="list">
+					<ul id="carList"></ul>     
+		      	</div>    
+		    </div>
+	    </div>
+		<footer id="js_footer">
+			<div id="footer_txt">找车</div>
+		</footer>
+	</div>
+
+	<div class="wrap"></div>
+	<div class="svg_frame" id="svgFrame" style="display:none">
+
+		<div id="svgBox" class="svg_box" style="visibility:hidden">svg地图内容</div>
+		<div id="g_txt" class="gTxt"></div>
+
+		<div id='line'></div>
+
+		<div id="bg" style="display: none"></div> 
+
+		<!-- 是否退出导航  开始-->
+		<div class="upper" style="display: none">
+		    <div class="upper1">
+		        <div style="padding-bottom: 10px; color: #000; font-size: 1rem;">是否退出导航?</div>
+		    </div>
+		    <div class="upper2 clearfix">
+		        <a id='noCancleGps' href="javascript:;">取消</a>
+		        <a id='CancleGps' href="javascript:;">确定</a>
+		    </div>
+		</div>
+		<!-- 是否退出导航 结束-->
+
+		<!--到达目的地-->
+		<div class="upper_dd" id="upper_dd" style="display: none">
+		    <div class="upper1 sifncar1">
+		        <div style="padding-bottom: 10px; color: #000; font-size: 1rem;">您已到达目的地</div>
+		        <div style="padding-bottom: 10px; color: #000; font-size: 1rem;">是否退出导航?</div>
+		    </div>
+		    <div id="giveUpGSP" class="upper3 closes">确定</div>
+		</div>
+		<!--到达目的地-->
+
+		<!--指针开始-->
+			<div class="zhizhen" >
+				<img id="zhizhen" src="test/image/zhizhen.png">
+			</div>
+		<!--指针结束-->
+
+		<!--图标-->
+		<div class="gong-btn">
+		    <!--蓝牙是否开启按钮-->
+		    <div><img id="bluetooth" src="test/image/index07.png"></div>
+		</div>
+		<!--图标-->
+
+		<!-- 导航中... 开始-->
+		<div class="jps_box" style="display: none">
+		    <img id='cancleBtn' src="test/image/close.png">
+		    <div id="sFloor_btn"></div>
+		    <span>导航中...</span>
+		    <div id="arrow"></div>
+		    <div id="tFloor_btn"></div>
+		    <div id="arrow1"></div>
+		    <div id="end_btn"></div>
+		</div>
+		<!-- 导航中... 结束-->
+
+		<!--正在路径规划中代码 开始-->
+		<div class="mask_bg" id="mask_bg" style="display: none">
+		    <img src="test/image/jiazai1.png">
+		    <p>地图加载中..</p>
+		</div>
+		<!--正在路径规划中代码 结束-->
+
+		<!--请标记终点 开始-->
+		<div class="end_box" style="display:none">
+		    请标记终点
+		</div>
+		<!--请标记终点 结束-->
+
+		<!--路径规划失败 开始-->
+		<div class="end_box" style="display: none">
+		    路径规划失败，请重试
+		</div>
+		<!--路径规划失败 结束-->
+
+		<!--起点图标 开始-->
+		<div class="qi_img" id='imgOne' style="display: none"><img src="test/image/q9_01.png"></div>
+		<!--起点图标 结束-->
+
+		<!--终点图标 结束-->
+		<div class="qi_img" id='imgTwo' style="display: none"><img src="test/image/q9_01.png"></div>
+		<!--终点图标 结束-->
+
+		<!--点击地图 开始-->
+		<div class="huizhan_box" style="display:none">
+		    <div class="hzbox_tit">
+		        <div class="hzbox_tit_left left">
+		            <p>捷顺科技实业股份有限公司</p>
+		            <p><!-- 展位号：E-521 --></p>
+		        </div>
+		       <!--  <div class="hzbox_tit_right right">
+		            <img src="test/image/xq.png"> 详情
+		        </div> -->
+		        <div class="clears"></div>
+		    </div>
+		    <div class="hzbox_btn">
+		        <div id='startPoint' class="hzbox_btn_left left">
+		            <img src="test/image/qi_01.png"> &nbsp;从这里出发
+		        </div>
+		        <div id='endPoint' class="hzbox_btn_right left">
+		            <img src="test/image/end_01.png">&nbsp; 到这里去
+		        </div>
+		        <div class="clears"></div>
+		    </div>
+		</div>
+		<!--点击地图 结束-->
+
+        <!--蓝牙提示-->
+		<div class="upper" id="upperTip" style="display: none;">
+			<div class="upper1">
+				<span>蓝牙设备未开启或您不在蓝牙覆盖区域</span>
+				<div class="sifncar3">请开启蓝牙或进入有蓝牙信号区域</div>
+			</div>
+			<div class="upper3" id="upperTipKown">知道了</div>
+		</div>
+		<!--蓝牙提示-->
+
+        <!--蓝牙有信号提示-->
+		<div class="upper" id="upperbbTip" style="display: none;">
+			<div class="upper1">
+				<span>已检测到蓝牙信号</span>
+				<div class="sifncar3">请直接选择目的地</div>
+			</div>
+			<div class="upper3" id="upperbbTipKown">知道了</div>
+		</div>
+		<!--蓝牙有信号提示-->
+
+		<!--我的点-->
+		<div id="point">
+			<img id="pointImg" style=" display: none; position: absolute;width: 40px;height: 40px; left: 0px; top:0px;" src="test/image/point.png">
+		</div>
+		<!--楼层选择-->
+		<div class="louc-btn">
+			<div class="default" id="default" style="background-image: url('images/lou-01.png');color: #fff;"><span id="defaultBtn">未获取</span></div>
+			<div id="optionBtn" style="display: none">
+				<div class="louc-btn-b"><span>B1</span><span class='info' style="display: none"></span><span class='info' style="display: none"></span><span class='info' style="display: none"></span></div>
+
+				<div class="louc-btn-b"><span>B2</span></div>
+				<div class="louc-btn-b"><span>B3</span></div>
+			</div>
+		</div>
+		<div></div>
+
+	</div>
+
+</body>
+<script type="text/javascript" src="./test/js/jsScript.js"></script>
+<script type="text/javascript" src="./hammer.min.js"></script>
+<script type="text/javascript" src="./debug.min.js"></script>
+<script type="text/javascript" src="./mapnavitest2.js"></script> 
+</html>

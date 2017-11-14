@@ -1,0 +1,537 @@
+html{
+    height: 100%;
+}
+body{
+	font-family: 微软雅黑;
+	background:#EDEDED;
+	margin:0;
+    /*-moz-user-select:none;*/
+    /*-webkit-user-select:none;*/
+    /*-ms-user-select:none;*/
+    /*-khtml-user-select:none;*/
+    /*user-select:none;*/
+    /*-moz-touch-callout: none;*/
+    /*-ms-touch-callout: none;*/
+    /*-khtml-touch-callout: none;*/
+    /*-webkit-touch-callout: none;*/
+    /*touch-callout: none;*/
+
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -khtml-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+.navmenu{
+	position: fixed;
+	width: 100%;
+	top:0;
+    z-index: 11;
+}
+.navmenu ul{
+	float: left;
+	width: 100%;
+	margin-left: 0%;
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #d9d9d9;
+}
+.navmenu li{
+	list-style-type: none;
+	float: left;
+	text-align: center;
+	width: 30%;
+	padding: 13px 0;
+	margin: 0 10%;
+    font-size: 0.32rem;
+}
+.navmenu .on{
+	color:#80c02b;
+	border-bottom: 2px solid #9ADB43;
+}
+#parkName{
+    color: #222;
+    font-size: 0.32rem;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    width: 4.2rem;
+    word-break: break-all;
+}
+/*#parkGround{*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*right:0.20rem;*/
+    /*width: 100%;*/
+    /*margin: auto;*/
+    /*display: table;*/
+    /*width: 3.2rem;*/
+    /*word-break: break-word;*/
+    /*text-align: right;*/
+/*}*/
+#poptip {
+    position: fixed;
+    top: 80%;
+    left: 20%;
+    right: 20%;
+    width: 50%;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 5%;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    z-index: 110;
+}
+.smiddle{
+	float: left;
+	padding-left: 0.30rem;
+}
+.sright1{
+	float: right;
+	margin-right: 4%;
+	color: #FE7302;
+    text-align: right;
+    font-size: 0.32rem;
+}
+.orderNo{
+	clear: both;
+	border-top: 1px solid #d9d9d9;
+	padding: 0.16rem 0.32rem;
+	color: #ADADAD;
+    font-size:0.28rem;
+}
+
+/*.line{*/
+    /*height: 100%;*/
+    /*width: 2px;*/
+    /*border-left: 2px solid #D1E8B4;*/
+    /*position: absolute;*/
+    /*left: 30px;*/
+    /*top: 20px;*/
+/*}*/
+#bill{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    margin-top: 0.30rem;
+    width: 92%;
+    left: 4%;
+    font-size: 14px;
+}
+#billErroro{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    margin-top: 0.30rem;
+    width: 92%;
+    left: 4%;
+    font-size: 14px;
+}
+#bill li{
+	border: 1px solid #d9d9d9;
+	width: 90%;
+	margin-left: 5%;
+	list-style-type:none;
+}
+.font1{
+	margin: 15px 0 0px 10px;
+    height: 0.32rem;
+}
+.font2{
+	margin: 0.10rem 0 0.30rem 0.20rem;
+	font-size: 0.28rem;
+	color: #ADADAD;
+}
+.font3{
+	margin: 0.10rem 0 0 0.20rem;
+	font-size: 0.28rem;
+	color: #222222;
+}
+.font4{
+    margin: 0.10rem 0 0 0;
+    font-size: 0.28rem;
+    color: #959595;
+}
+.park_fee{
+    position: absolute;
+    width: 0.9em;
+    left: -0.10rem;
+    background: #9adb43;
+    top: 0.32rem;
+    font-size: 0.7em;
+    padding: 0.10rem 1px;
+    color: #fff;
+    line-height: 130%;
+}
+.location_fee{
+    position: absolute;
+    width: 0.9em;
+    left: -0.10rem;
+    background: #ff6e0e;
+    top: 0.32rem;
+    font-size: 0.7em;
+    padding: 0.10rem 1px;
+    color: #fff;
+    line-height: 130%;
+}
+.monthly_fee{
+    position: absolute;
+    width: 0.9em;
+    left: -0.10rem;
+    background: #61a9e7;
+    top: 0.32rem;
+    font-size: 0.7em;
+    padding: 0.10rem 1px;
+    color: #fff;
+    line-height: 130%;
+}
+.rental_fee{
+    position: absolute;
+    width: 0.9em;
+    left: -0.10rem;
+    background: #d9b610;
+    top: 0.32rem;
+    font-size: 0.7em;
+    padding: 0.10rem 1px;
+    color: #fff;
+    line-height: 130%;
+}
+.visitor_fee{
+    position: absolute;
+    width: 0.9em;
+    left: -0.10rem;
+    background: #48e3bd;
+    top: 0.32rem;
+    font-size: 0.7em;
+    padding: 0.10rem 1px;
+    color: #fff;
+    line-height: 130%;
+}
+.other_fee{
+    position: absolute;
+    width: 0.9em;
+    left: -0.10rem;
+    background: #a58459;
+    top: 0.32rem;
+    font-size: 0.7em;
+    padding: 0.10rem 1px;
+    color: #fff;
+    line-height: 130%;
+}
+
+.hasNo{
+    background-image: url("../images/hasNo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 28%;
+    height: 2.20rem;
+    margin-left: 36%;
+    top: 33%;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.firstClass{
+    border-top:1px solid rgb(217 217 217);
+    border-bottom:1px solid rgb(217 217 217);
+    background-color:#ffffff;margin-top:0.30rem;
+}
+.money{
+    padding:15px;text-align:center;
+    border-bottom: 1px solid #d9d9d9;font-size: 0.36rem;
+    background: #ffffff;
+}
+.ul_parent{
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    max-height: 8rem;
+    overflow-y: auto;
+}
+.ul{
+    margin: 0;padding:0;margin:0 0 0 0.30rem;
+}
+.ul li{
+   list-style-type: none;position: relative;
+    padding: 0.30rem 0.20rem 0.30rem 0;border-bottom: 1px solid #d9d9d9;
+    font-size: 0.30rem;
+}
+.ul .li_last{
+    list-style-type:none;position: relative;border: 0;
+}
+.second_class{
+    position: absolute;right: 0.30rem;color:#959595;
+}
+.footer{
+    position: fixed;bottom: 0.20rem;text-align: center;
+    width: 100%;font-size: 0.24rem;color: #959595;
+}
+.footer .go_to_pay{
+    color: #fff;
+    width: 90%;
+    background: rgb(128, 192, 43);
+    margin-left: 5%;
+    padding: 0.30rem 0;
+    border-radius: 5px;
+}
+.footer .tell{
+    margin-top: 0.20rem;
+}
+.has_no_more{
+    text-align: center;
+    font-size: 0.32rem;
+    margin-top: 0.20rem;
+}
+.footer_span{
+    color:#ff6e0e;
+    text-decoration: inherit;
+    -moz-user-select:initial;
+    -webkit-user-select:initial;
+    -ms-user-select:initial;
+    -khtml-user-select:initial;
+    user-select:initial;
+    -moz-touch-callout: initial;
+    -ms-touch-callout: initial;
+    -khtml-touch-callout: initial;
+    -webkit-touch-callout: initial;
+    touch-callout: inherit;
+}
+.refund{
+    background: #9ADB43;
+    color: #ffffff;
+    text-align: center;
+    margin: 0.30rem;
+    padding: 0.24rem;
+    border-radius: 0.10rem;
+    font-size: 0.36rem;
+}
+.unrefund{
+    background: #c3c3c3;
+    color: #ffffff;
+    text-align: center;
+    margin: 0.30rem;
+    padding: 0.24rem;
+    border-radius: 0.10rem;
+    font-size: 0.36rem;
+}
+.sublist{
+    text-decoration: none;
+}
+/*.top_div{*/
+    /*margin-top: 1.38rem;*/
+/*}*/
+#confirm{
+    width: 80%;
+    min-height: 2rem;
+    margin: -1.00rem 10%;
+    position: fixed;
+    top: 40%;
+    z-index: 11000;
+    font-size: 0.32rem;
+    background: #9ADB43;
+    border-radius: 5px;
+}
+#confirm:before{
+
+}
+#confirm p{
+    line-height: 0.40rem;
+    height: 0.80rem;
+    width: 100%;
+    float: left;
+    font-size: 1.6em;
+    margin: 0.7rem 0 0.5rem;
+    font-family: OfficialScript;
+    color: #fff;
+    transform: rotate(-8deg);
+    text-align: center;
+}
+.rotate{
+
+    position: relative;
+}
+.line{
+    background: url(../images/line.png);
+    width: 80%;
+    height: 43px;
+    position: absolute;
+    top: 0.8rem;
+    transform: rotate(0deg);
+    z-index: 1111111;
+    left: 50px;
+    background-size: 100%;
+}
+#confirm_sure,#confirm_cancel,#confirm_known{
+    width: 50%;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    text-align: center;
+    background: #FFF;
+    display: inline-block;
+    /* background-color: #18B4ED; */
+    color: #FFF;
+    margin: 0 2%;
+    /* border-radius: 2px; */
+    font-size: 0.32rem;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: #9ADB43;
+}
+#confirm_cancel{
+    float: left;
+    color: #222222;
+    border-right: 1px solid #9ADB43;
+    border-radius: 0px 0px 0px 5px;
+}
+#confirm_sure{
+    border-radius: 0px 0px 5px 0;
+}
+#qrcode_Detail_Parent{
+    width: 300px;
+    background-color: #fff;
+    position: absolute;
+    top: calc((100% - 400px)/2);
+    border-radius: 10px;
+    left: calc((100% - 300px)/2);
+    height: 400px;
+    z-index: 111111;
+}
+#qrcode_Detail{
+    text-align: center;
+    margin-left: 14px;
+    height: 369px;
+    width: 273px;
+    background: #fff;
+    background-image: url(../images/erweimaborder.png);
+    background-size: 100%;
+    margin-top: 15px;
+}
+#qrcode_Detail img{
+    margin-top: 52px;
+}
+.mask_new{
+    position: fixed;
+    top: 0;right: 0;bottom: 0;left: 0;
+    z-index: 1000;
+    background-color: #000000;
+    opacity:0.5;
+}
+.bg_loading{
+    position: fixed;
+    background-image: url("http://developer.baidu.com/map/jsdemo/img/fox.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+    left: calc((100% - 2rem)/2);
+    top: calc((100% - 3rem)/2);
+    z-index: 111111;
+    opacity: initial;
+}
+.bg_poacity{
+    position: fixed;
+    top: 0;right: 0;bottom: 0;left: 0;
+    z-index: 1000;
+    background-color: #000000;
+    opacity:0.5;
+}
+.backgroundC{
+    position: fixed;
+    background-image: url("http://developer.baidu.com/map/jsdemo/img/fox.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+    left: calc((100% - 2rem)/2);
+    top: calc((100% - 3rem)/2);
+    z-index: 111111;
+    opacity: initial;
+}
+#poptip {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    left: 10%;
+    right: 0;
+    width: 70%;
+    font-size: 0.24rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    min-height: 3em;
+    padding: 0.5em 5%;
+    line-height: 3em;
+    color: #fff;
+    border-radius: 3px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    z-index: 99999;
+}
+.qrcode{
+    position: absolute;
+    right: 0.30rem;
+    top: 0.24rem;
+    height: 0.56rem;
+    width: 0.56rem;
+    background: url(../images/qrcode.png);
+    background-size: 100%;
+}
+#bill a,#billErroro a{
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+    -moz-touch-callout: none;
+    -ms-touch-callout: none;
+    -khtml-touch-callout: none;
+    -webkit-touch-callout: none;
+    touch-callout: none;
+}
+.flowLine{
+    width: 1px;
+    height: 100%;
+    background-color: #80c02b;
+    position: absolute;
+    left: 0.6rem;
+    top: 0;
+}
+.invoice{
+    text-align: center;
+    line-height: 0.84rem;
+    background: rgb(154, 219, 67);
+}
+.invoiceRight{
+    text-align: center;
+    line-height: 0.84rem;
+    height: 0.84rem;
+    float: left;
+    width: calc(50% - 1px);
+    border-left: 1px solid #fff;
+    background: rgb(154, 219, 67);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.refundLeft{
+    text-align: center;
+    line-height: 0.84rem;
+    height: 0.84rem;
+    float: left;
+    width: 50%;
+    background: rgb(154, 219, 67);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

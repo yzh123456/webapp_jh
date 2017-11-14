@@ -1,0 +1,214 @@
+* {
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+}
+
+/*  页面头部样式  */
+.headDiv{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-color: #F0EFF5;
+	z-index: 1;           /*   头部 z-index */
+}
+.headDiv ul{
+	list-style: none;   /*列表项标记为无  可设置为点、方形、或指定图片*/
+}
+.headDiv ul li{
+	float:left;
+	text-align: center;
+	height: 1.0rem;
+}
+
+.headLeft {
+	width: 25%;
+}
+.headRight{
+	width: 25%;
+}
+.headMiddle{
+	width: 50%;
+}
+
+.headRightDiv{
+	padding:0.35rem 0 0.3rem 0;
+	font-size: 0.26rem;
+}
+.headRightDiv img{
+	vertical-align: baseline;
+}
+.headMiddleDiv{
+	font-size: 0.4rem;
+	margin: 0.15rem 0 0 0;
+}
+.goBackImg{
+	padding: 0.2rem 0.4rem 0.2rem 0.5rem;
+	width: 0.26rem;
+	height: 0.5rem;
+	display: block;
+}
+.jstAccount{
+	font-size: 0.24rem;
+	color: #959595;
+}
+
+
+.c_billChoose {
+	position: absolute;
+	right: 0.2rem;
+	bottom: 0;
+	font-size: 0.26rem;
+	color: #222222;
+}
+
+.c_account {
+	font-size: 0.24rem;
+	text-align: center;
+	color: #222222;
+}
+
+
+/*  切换页签样式  */
+.c_switchPane {
+	width: 100%;
+	position:fixed;
+	top: 1.0rem;
+	background-color: white;
+	border-bottom: 0.04rem solid #d9d9d9;
+	border-top:  0.04rem solid #d9d9d9;
+	z-index: 3;         /*   切换页签   z-index */
+}
+
+#switchPaneRecent {
+	height:0.9rem;
+	text-align: center;
+	color: #80c02b;
+	border-bottom: 0.05rem solid #9adb43;
+	margin: 0px 10%;
+	float: left;
+	width: 30%;
+	font-size: 0.3rem;
+	line-height: 0.9rem;
+	z-index: 3;
+}
+
+#switchPaneBefore {
+	height:0.9rem;
+	text-align: center;
+	color: #666666;
+	margin: 0px 10%;
+	float: left;
+	width: 30%;
+	font-size: 0.3rem;
+	line-height: 0.9rem;
+	z-index: 3;
+}
+
+
+/*   列表项样式    */
+.c_billItem {
+	background-color: white;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.c_billTitle {
+	position: relative;
+	font-size: 0.32rem;
+	color: #222222;
+	padding: 0.3rem 0 0.1rem 0.3rem;
+}
+
+.c_billPay {
+	position: absolute;
+	font-size: 0.32rem;
+	top: 0.3rem;
+	right: 0.3rem;
+}
+
+.c_billType {
+	position: relative;
+	font-size: 0.26rem;
+	color: #959595;
+	padding: 0 0 0.1rem 0.3rem;
+}
+
+.c_billTypeStatus {
+	position: absolute;
+	top: 0;
+	right: 0.3rem;
+	font-size:  0.26rem;
+}
+
+.c_billTime {
+	font-size: 0.26rem;
+	color: #959595;
+	padding: 0 0 0.3rem 0.3rem;
+}
+
+
+
+/* 重叠div画尖角样式 */
+.layerDown{
+	width: 0;
+	height: 0;
+	border-bottom: 0.2rem solid #d9d9d9;
+	border-left: 0.12rem solid transparent;
+	border-right:0.12rem solid transparent;
+	position: fixed;
+	right: 0.87rem;
+	top: 0.71rem;
+	z-index: 9;       /*    尖角下层 z-index  要小于账单类型列表 z-index 10*/
+	display: none;
+}
+
+.layerUp{
+	width: 0;
+	height: 0;
+	border-bottom: 0.2rem solid white;
+	border-left: 0.12rem solid transparent;
+	border-right: 0.12rem solid transparent;
+	position: fixed;
+	right: 0.87rem;
+	top: 0.72rem;
+	z-index: 11;   /*    尖角上层 z-index  要大于账单类型列表 z-index 10*/
+	display: none;
+}
+
+
+/*  账单类型列表组件样式 */
+.c_billTypeList {
+	background-color: white;
+	position: fixed;
+	right: 0.24rem;
+	top: 0.88rem;
+	border: 1px solid #d9d9d9;
+	margin: 0;
+	padding: 0;
+	font-size:  0.26rem;
+	z-index: 10;             /*   账单类型列表  z-index */
+}
+
+.c_allBill {
+	list-style-type: none;
+	border-bottom: 1px solid #d9d9d9;
+	color: #80c02b;
+	padding: 0.2rem 0;
+	margin: 0 0.2rem;
+}
+
+.c_rechargeBill {
+	list-style-type: none;
+	border-bottom: 1px solid #d9d9d9;
+	color: black;
+	padding: 0.2rem 0;
+	margin: 0 0.2rem;
+}
+
+.c_consumeBill {
+	list-style-type: none;
+	color: black;
+	padding: 0.2rem 0;
+	margin: 0 0.2rem;
+}
+
+/*  上拉加载组件样式 */

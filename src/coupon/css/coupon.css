@@ -1,0 +1,237 @@
+/*优惠券*/
+#couponlist {
+    width:100%;
+    float:left;
+}
+#couponlist_category{
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    background-color: #FFF;
+    border-bottom: 0.5px solid #f0eff5;
+    left: 0;
+}
+#couponlist_category li{
+    width:33.33%;
+    height:1rem;
+    float: left;
+    border-bottom: 0.05rem solid #FFF;
+    text-align: center;
+}
+#couponlist_category li .title{
+    height:1rem;
+    line-height: 1.05rem;
+    margin:0 auto;
+    border-bottom: 0.05rem solid #FFF;
+    color: #666666;
+}
+#couponlist_category li.selected .title{
+    border-bottom: 0.05rem solid #80c02b;
+    color: #80c02b;
+}
+#couponlist_category li .title em{
+    pointer-events: none;
+}
+#couponlist_category li#couponlist_category_nouse .title em{
+    color: #ef6623;
+}
+#coupon_list_ul{
+    width: 100%;
+    padding-top: 1rem;
+}
+.backgroundUpImg,.backgroundUpImgGray{
+    background: url(../images/coupon_up_green.png) repeat-x 96%;
+    height: 5px;
+    width: 99.5%;
+    margin-left: 0.02rem;
+    text-align: center;
+    background-size: 0.21rem;
+}
+.backgroundUpImgGray{
+    background: url(../images/coupon_up_gray.png) repeat-x 96%;
+    height: 5px;
+    width: 99.5%;
+    margin-left: 0.02rem;
+    text-align: center;
+    background-size: 0.21rem;
+}
+.backgroundDownImg,.backgroundDownImgGray{
+    background: url(../images/coupon_d_green.png) repeat-x 94%;
+    height: 0.2rem;
+    width: 97.5%;
+    margin-left: 0.1rem;
+    text-align: center;
+    background-size: 0.21rem;
+    position: absolute;
+    bottom: 0.6rem;
+}
+.backgroundDownImgGray{
+    background: url(../images/coupon_d_gray.png) repeat-x 96%;
+    height: 0.2rem;
+    width: 97.5%;
+    margin-left: 0.1rem;
+    text-align: center;
+    background-size: 0.21rem;
+}
+#coupon_list_ul li {
+    position:relative;
+    height:2.5rem;
+    margin: 0 0 0.4rem 0;
+    width:94%;
+    float:left;
+    left: 3%;
+    background-size: 100% auto;
+    background-position: center top;
+}
+#coupon_list_ul > div{
+    min-height: 0.3rem;
+    padding: 0.05rem 0;
+}
+#coupon_list_ul li.coupon_park {
+    background: url(../images/coupon_green.png) no-repeat 100% 0 / 100%;
+    background-size: 100% 2.5rem;
+    -moz-background-size: 100% 2.5rem;
+}
+#coupon_list_ul li.coupon_park_gray {
+    background: url(../images/coupon_gray.png) no-repeat 100% 0 / 100%;
+    background-size: 100% 2.5rem;
+    -moz-background-size: 100% 2.5rem;
+}
+.couponName, .couponNum , .couponValitime ,.couponParkname{
+    font-weight: 600;
+    margin: 0.15rem 0.25rem;
+}
+.couponNum , .couponValitime ,.couponParkname{
+    font-weight: normal;
+}
+.couponValitime{
+    margin: 0.15rem 0.25rem 0.01rem 0.25rem;
+}
+.couponParkname{
+    margin: 0 0.25rem ;
+    color: #80c02b;
+    position: absolute;
+    bottom: 0.13rem;
+}
+.couponParknameGray{
+    position: absolute;
+    bottom: 0.12rem;
+    margin: 0 0.25rem ;
+    color: #969696;
+    position: absolute;
+    bottom: 0.13rem;
+}
+.qrcode_icon{
+    position: absolute;
+    background: url(../images/coupon_qrcode.png) no-repeat 100% / 100%;
+    height: 0.55rem;
+    width: 0.55rem;
+    left: 4rem;
+    top: 0.55rem;
+}
+.couponMany{
+    position: absolute;
+    font-size: 0.48rem;
+    font-weight: 700;
+    top: 0.52rem;
+    left: 5.4rem;
+    color: #ef6623;
+}
+.couponManyGray{
+    color: #959595;
+}
+/* 优惠券详情 */
+section#couponDetail{
+    width:94%;
+    margin-left: 3%;
+}
+#couponDetail{
+    background: url(../images/coupon_detail.png) repeat;
+    background-size: contain;
+    width:100%;
+    height: 3.6rem;
+    margin: 0.3rem 0 0 0;
+}
+.couponNameDetail {
+    color: #FFFFFF;
+    font-size: 0.32rem;
+    padding: 0.6rem 0 0.15rem 0;
+    font-weight: 600;
+}
+.couponNumDetail {
+    color: #FFFFFF;
+    font-size: 0.28rem;
+    margin: 0.2rem;
+}
+.couponManyDetail{
+    font-size: 0.56rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.couponValitimeDetail{
+    margin: 0.15rem 0.25rem 0.01rem 0.25rem;
+    font-size: 0.28rem;
+    color:#538e04;
+}
+.couponParkNameDetail{
+    margin: 0.10rem 0.25rem ;
+    color: #959595;
+}
+.couponMsg{
+    text-align: center;
+}
+.useMsg{
+    background-color: #FFFFFF;
+    width: 100%;
+}
+.useMsg p{
+    font-size: 0.28rem;
+    color: #fa7205;
+    padding: 5px 10px;
+}
+.couponUsePlace,.couponUseDetail{
+    padding: 5px 10px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.qrcode{
+    text-align: center;
+}
+.qrcode img,.qrcode canvas{
+    border: 0.2rem solid #292929;
+    padding: 0.2rem;
+    margin: 1rem 0 0.1rem 0;
+}
+.refreshTime{
+    color: #292929;
+    margin-bottom: 0.2rem;
+}
+.refreshTime span{
+    color: #fa7205;
+}
+.requestf5{position:absolute; width:100px; height:20px; line-height:20px; text-align:center;
+    left:50%; margin-left:-50px; top:45px; z-index:2; opacity:0;}
+
+.couponMask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    opacity: 0.5;
+    text-align: center;
+    display: table;
+    z-index: 1000;
+    visibility: hidden;
+    background: rgb(0, 0, 0) url(../images/coupon_arrow2x.png) no-repeat 97% 0;
+    background-size: 0.5rem;
+}
+.shareCoup{
+    background: url(../images/coupon_share2x.png) no-repeat 100% 0;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.6rem;
+    right: 7%;
+    top: 0.7rem;
+    position: absolute;
+}

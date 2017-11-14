@@ -1,0 +1,100 @@
+.icon{
+    position: absolute;
+    left: 0.4rem;
+    top: 0.3rem;
+    background: url(../images/no_chose.png) 0% 0% / cover;
+    width: 0.38rem;
+    height: 0.38rem;
+    margin-right: 0.4rem
+}
+.active_icon{
+    position: absolute;
+    left: 0.4rem;
+    top: 0.3rem;
+    background: url(../images/chose.png) 0% 0% / cover;
+    width: 0.38rem;
+    height: 0.38rem;
+    margin-right: 0.4rem
+}
+
+.coverlist{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+    background: #000;
+    opacity: 0.7;
+
+}
+.messagelist{
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    width: 81%;
+    border-radius: 10px;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    margin-top: -2.6rem;
+    z-index: 999999;
+
+}
+.messagelist p:nth-child(1){
+
+    background: url(../images/pic.png);
+    width:6.075rem;
+    height:2.36rem;
+    -webkit-background-size:cover;
+    background-size:cover;
+    position:relative;
+
+
+}
+.messagelist p:nth-child(3){
+    background: url(../images/pic_myvallet_bg.png);
+    width:3.73rem;
+    height:0.64rem;
+    -webkit-background-size:cover;
+    background-size:cover;
+    position:absolute;
+    left:20%;
+    top:42%;
+
+}
+.messagelist p:nth-child(2){
+    font-size: 0.32rem;
+    color: #fff;
+    position: absolute;
+    left: 19%;
+    bottom: 59%;
+    transform: rotate(-5deg);
+
+}
+.messagelist div{
+    border-top:1px solid #80c02b;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.messagelist div span{
+    display: inline-block;
+    font-size: 0.34rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding:0.3rem 0;
+    cursor: pointer;
+
+
+}
+.messagelist div span:nth-child(1){
+    color: #222;
+    border-right:1px solid #80c02b;
+
+}
+.messagelist div span:nth-child(2){
+    color: #80c02b;
+
+}

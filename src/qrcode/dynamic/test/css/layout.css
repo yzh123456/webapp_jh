@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+/*Initialization style*/
+body { color: #666; font: 14px/1.428571429 Helvetica, Arial, sans-serif, "Hiragino Sans GB","Hiragino Sans GB W3"; }
+html, body { width: 100%; height: 100%; }
+html, body, form, div, img, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, select, input, button textarea, th, td, hr, article, aside, header, footer, nav, section, summary, figure, figcaption { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img { border: 0; vertical-align: middle; }
+em, i { font-style: normal; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+select, input, button { vertical-align: middle; outline: none; }
+textarea { resize: none; vertical-align: top; outline: none; }
+input[type="button"], input[type="submit"], input[type="reset"], button { border: 0; cursor: pointer; -webkit-appearance: button; }
+button[disabled], html input[disabled] { cursor: default; }
+input[type="file"] { display: block; }
+input{ outline:none; border:none; padding:0; margin:0; font-size:12px;}
+a{ color: #666; text-decoration: none; outline: none; }
+
+/*public*/
+.left{float:left;}
+.right{float:right;}
+.clears{clear:both;}
+.relative{position:relative;left:0;top:0;}
+.clearfix:before,.clearfix:after{content:"";display:table;}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1;}
+.opacity6{ -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; /* ie8  */filter:alpha(opacity=60);    /* ie5-7  */opacity:0.6;/* css standard, currently it works in most modern browsers  */}
+.app_center{width:100%;min-width:320px;margin-left:auto;margin-right:auto;}
+.red{color:red;}
+.c_999{color:#999;}
+.pt10{padding-top:10px;}
+.hide{display:none;}
+
+/*dd*/
+.qi_img{position: absolute;left:0px;  top: 0px;}
+.qi_img img{width: 2rem;height: 2.3rem;}
+.huizhan_box{border: 1px solid #ccc; overflow: hidden; position: absolute;bottom: 40px;width:20rem; margin: 0 auto;transform:translate(-50%,-20%);
+    -webkit-transform: translate(-50%, -20%);  -moz-transform: translate(-50%, -20%);  -ms-transform: translate(-50%, -20%);
+    -o-transform: translate(-50%, -20%);left:50%;padding: 10px; font-family:"微软雅黑","宋体";background: #fff;  opacity: 0.8;  border-radius: 5px;}
+.hzbox_tit{ border-bottom: 1px solid #adadad; padding-bottom: 5px;}
+.hzbox_tit_left p:first-child{ color: #000; font-size: 1.2rem;}
+.hzbox_tit_left p:last-child{color: #adadad; padding-top: 10px;}
+.hzbox_tit_right{ width: 50px; /*line-height: 50px;*/color: #0087ff;}
+.hzbox_btn_left,.hzbox_btn_right{ width: 50%; text-align: center; margin-top: 5px; color: #0087ff;}
+.hzbox_btn_left{ border-right:1px solid #adadad; }
+.hzbox_btn_left img,.hzbox_btn_right img{width: 1rem; height:1.2rem;}
+.hzbox_tit_right img{ width: 1rem; height: 1rem;}
+
+.end_box,.end_box{background: #666666; opacity: 0.6; color: #fff;padding: 0.5rem 1rem; border-radius: 5px;}
+
+.mask_bg img{ width: 4rem; height: 4rem;}
+
+.jps_box{position: absolute;bottom: 0; width: 100%; height: 50px; line-height: 50px; background:  #0087ff;color: #fff; text-align: center; font-size: 1.2rem;}
+.jps_box img{ width: 1rem; height: 1rem; float: left; margin: 15px 0 0 20px;}
+
+
+/*楼层*/
+.louc-btn{
+	font-family: "微软雅黑";
+	position: fixed;
+	top: 70px;
+	right: 1rem;
+}
+.louc-btn div div,.louc-btn div{
+	margin-top: 8px;
+	width: 2.5rem;
+	height: 2.5rem;
+	color: #999999;
+	padding-top: 5px;
+	text-align: center;
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+    border-radius: 50%;
+}
+.louc-btn div div{
+	color: #fff;
+}
+.louc-btn .louc-btn-b{
+	padding-top: 9px;
+}
+
+/*加载中遮罩层---开始*/
+#bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .35);
+    filter: alpha(opacity=70);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    display: none;
+}
+.upper,.upper_dd{
+    width:16.5rem;
+    height: auto;
+    font-size: 0.3rem;
+    padding:1rem 0 0 0;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border-radius:4px;
+    z-index: 101;
+    font-family:"微软雅黑","宋体";
+}
+.upper,.end_box,.end_box ,.mask_bg,.upper_dd{
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left:50%;
+}
+.upper a{
+    color: #000;
+    font-size: 0.7rem;
+}
+.upper1, .upper1-carsign{
+    padding-bottom:0.25rem;
+    border-bottom:solid 1px #a6a6a6;
+}
+.upper1 span,.upper1-carsign{
+    display: block;
+    line-height:1.4rem;
+    display: inline-block;
+    padding-bottom:0.5rem;
+    font-size: 1.1rem;
+}
+.upper1>span,.upper1>div,.upper1-carsign>span{
+    padding: 0 0.375rem;
+}
+.upper1>div{
+    font-size:10px;
+    font-family : 微软雅黑,宋体;
+    color: #666;
+}
+.upper1>div a{
+    line-height:1.5rem;
+}
+.upper3{
+    margin: 0.7rem auto;
+    color: #0087ff;
+    font-size: 1rem;
+}
+.upper2,.upper2-carsign{
+    height: 2.2rem;
+    line-height:2.2rem;
+}
+.upper2 a,.upper2-carsign a{
+    display: block;
+    color: #0087ff;
+    font-size:1rem;
+    width:50%;
+    float: left;
+}
+.upper2 a:nth-child(2),.upper2-carsign a:nth-child(2){
+    border-left: solid 1px #a6a6a6;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.gong-btn{
+    position: absolute;
+    bottom: 110px;
+    left: 1rem;
+}
+.gong-btn div{
+    margin-top: 2em;
+}
+.gong-btn div img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+/*徐志伟的css*/
+/* .cls_txt_circle {
+	    padding-left: 10px;
+	    background: url(http://wx.indoorun.com/indoorun/wxtest/test/images/ic_textpoint_blue@2x.png) no-repeat 0 50%;
+	    background-size: 8px 8px;
+	} */
+#line img{width:6px; height: 4px;}
+.zhizhen{ position: absolute;left: 20px; top: 20px;}
+.zhizhen img{ width: 3rem; height: 3rem;}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../common/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/invoice.css" />
+    <title>发票申领</title>
+    <style>
+        #bill {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            position: relative;
+            border-bottom: 1px solid #d9d9d9;
+            background: #ffffff;
+            border-top: 1px solid #d9d9d9;
+            margin-top: 0.30rem;
+            width: 100%;
+            left: 0;
+            font-size: 14px;
+        }
+        .park_fee {
+            position: absolute;
+            width: 0.9em;
+            background: #9adb43;
+            top: 0.32rem;
+            left: 0;
+            font-size: 0.7em;
+            padding: 0.10rem 1px;
+            color: #fff;
+            line-height: 130%;
+            height: auto;
+        }
+        .font2 {
+            margin: 0.10rem 0 0.10rem 0.20rem;
+            font-size: 0.28rem;
+            color: #ADADAD;
+        }
+        .orderNo {
+            clear: both;
+            border-top: 1px solid #d9d9d9;
+            padding: 0.10rem 0.2rem;
+            color: #ADADAD;
+            font-size: 0.28rem;
+        }
+        .check{
+            width: 12%;
+            left: 0;
+            height: 2.4rem;
+            position: absolute;
+            border-right: 1px solid #d9d9d9;
+            background: url(../images/checked.png) no-repeat center;
+            background-size: 0.45rem;
+        }
+        .checked{
+            background: url(../images/checked.png) no-repeat center;
+            background-size: 0.45rem;
+        }
+        .uncheck{
+            background: url(../images/uncheck.png) no-repeat center;
+            background-size: 0.45rem;
+        }
+        .sublist {
+            clear: both;
+            text-decoration: none;
+            width: 88%;
+            left: 12%;
+            position: relative;
+        }
+        .sublist .font1 {
+            margin: 0.5rem 0 0 0;
+            height: 0.32rem;
+        }
+        .getVnvoice{
+            height: 0.97rem;
+            background: #ffffff;
+            border-top: 1px solid #d9d9d9;
+        }
+        .chooseAll{
+            width: 66%;
+            line-height: 1rem;
+            left: 0;
+            position: absolute;
+            text-indent: 0.8rem;
+            height: 1rem;
+            color: #9adb43;
+            background: url(../images/uncheck.png) no-repeat 0.2rem;
+            background-size: 0.45rem;
+        }
+        .getVnvoice .confirm{
+            width: 34%;
+            line-height: 1rem;
+            right: 0;
+            position: absolute;
+            text-align: center;
+            background: #9adb43;
+            color: #ffffff;
+        }
+    </style>
+    <script src="./debug.min.js"></script>
+</head>
+<body id="body">
+<section id="invoice" class="wrapper">
+</section>
+<script src="../../../output/invoice.build.js"></script>
+</body>
+</html>

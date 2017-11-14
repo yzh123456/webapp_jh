@@ -1,0 +1,229 @@
+
+h2{
+	font-size: 0.32rem;
+	color: #222;
+}
+.parkAddress{
+	font-size: 0.26rem;
+	color: #222;
+}
+
+article{
+	border: 1px solid #d9d9d9;
+}
+.lock_out,.lock_in,.lock_unlock,.lock_goout{
+	margin:0.27rem 0.3rem 0 0.3rem;
+	padding-right: 0.2rem;
+	background-color: #fff;
+	overflow: hidden;
+	position: relative;
+	
+}
+
+.lock_unlock ul,.lock_goout ul{
+	
+    width: 100%;
+    padding: 0.2rem 0 0.2rem 0.2rem;
+ 
+}
+.lock_unlock ul li,.lock_goout ul li {
+	float:left;
+	
+}
+.lock_unlock ul li:nth-child(1),.lock_goout ul li:nth-child(1) {
+   width:2rem;
+}
+.lock_unlock ul li:nth-child(2),.lock_goout ul li:nth-child(2) {
+   width:3rem;
+}
+.lock_unlock ul li span:nth-child(1),.lock_goout ul li span:nth-child(1){
+	width: 0.32rem;
+	height:0.32rem;
+	display: inline-block;
+	margin-right:0.12rem;
+	float:left;
+}
+.lock_unlock ul li span:nth-child(2){
+	float: left;
+	width: 1.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.lock_unlock ul li:nth-child(1) span:nth-child(1),.lock_goout ul li:nth-child(1) span:nth-child(1){
+	
+	background: url(../images/lockcar_06.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.lock_unlock ul li:nth-child(2) span,.lock_goout ul li:nth-child(2) span{
+	
+	background: url(../images/lockcar_08.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.lock_unlock ul li:nth-child(3) span,.lock_goout ul li:nth-child(3) span{
+	
+	background: url(../images/lockar.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.line {
+    width: 1px;
+    height: 100%;
+    background-color: #80c02b;
+    position: absolute;
+    left: 0.6rem;
+    top: 0;
+}
+.lock_out .detail,.lock_in .detail,.lock_unlock .detail,.lock_goout .detail{
+	padding:0.2rem 0;
+	float: left;
+	width:5.4rem;
+}
+.detail h2 {
+	width: 5.4rem;
+	font-weight: normal;
+	float: left;
+}
+.clear{
+	clear: both;
+}
+.lock_out .detail h2 span:nth-child(2){
+	float:right;
+	font-size: 0.28rem;
+	font-weight: normal;
+}
+.lock_in .detail h2 span:nth-child(2){
+	float:right;
+	font-size: 0.28rem;
+	font-weight: normal;
+}
+.lock_unlock .detail h2 span:nth-child(2){
+	float:right;
+	font-size: 0.28rem;
+	font-weight: normal;
+}
+.lock_unlock ul,.lock_goout ul{
+	color: #959595;
+	font-size: 0.22rem;
+	
+}
+.lock_goout .detail h2 span:nth-child(2){
+	float:right;
+	font-size: 0.28rem;
+	font-weight: normal;
+}
+.border {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: #d9d9d9;
+    left: 0;
+}
+.detail .lockTime span:nth-child(1){
+	width:0.26rem;
+	height:0.3rem;
+	display: inline-block;
+	background: url(../images/success.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin-right:0.2rem;
+}
+.detail .lockTime span:nth-child(3){
+	width:0.33rem;
+	height:0.3rem;
+	display: inline-block;
+	background: url(../images/icon_small_unlock.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin-right:0.13rem;
+	margin-left: 0.2rem;
+}
+.detail .lockTime span:nth-child(2){
+	font-size: 0.26rem;
+	color: #959595;
+}
+.detail .lockTime span:nth-child(4){
+	font-size: 0.26rem;
+	color: #959595;
+}
+
+.out,.lockTime{
+	line-height: 0;
+}
+.out{
+	margin-bottom: 0.15rem;
+}
+
+/* 已解锁出场 */
+.lock_record_lock-out{
+    background: url(../images/pay_result_success.png);
+    height:1.0rem;
+    float: left;
+    width: 1.0rem;
+  	-webkit-background-size: cover;
+  	background-size: cover;
+  	margin-right:0.2rem;
+}
+/* 已锁定*/
+.lock_record_lock-in{
+    background: url(../images/icon_lock_car.png);
+    height: 1.0rem;
+    float: left;
+    width: 1.0rem;
+   	-webkit-background-size: cover;
+  	background-size: cover;
+  	margin-right:0.2rem;
+}
+/* 岗亭解锁出场*/
+.lock_record_people_unlock{
+    background: url(../images/icon_people_lock.png);
+    height: 1.0rem;
+    float: left;
+    width: 1.0rem;
+    -webkit-background-size: cover;
+  	background-size: cover;
+  	margin-right:0.2rem;
+}
+/* 未解锁出场*/
+.lock_record_unlock_goout{   
+    background: url(../images/icon_unlock_goout.png);
+    height: 1.0rem;
+    float: left;
+    width: 1.0rem;
+   -webkit-background-size: cover;
+  	background-size: cover;
+  	margin-right:0.2rem;
+}
+
+.pulldown,.pullUp{
+
+	text-align: center;
+	font-size:0.32rem;
+	color: #545454;
+}
+
+.hide{
+	display: none;
+}
+.hasNo{
+	background-size: 100%;
+	width: 28%;
+	height: 2.20rem;
+	margin-left: 36%;
+	top: 33%;
+
+}
+h2 span:nth-child(2) {
+	color: #959595;
+}
+h2 span:nth-child(1){
+	float: left;
+	width: 3.6rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: 0.2rem;
+	margin-top: -0.1rem;
+}
